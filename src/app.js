@@ -50,7 +50,7 @@ app.get('/weather', (req, res) => {
             return res.send({ error })
         }
 
-        forecast(longitude, latitude, (error, {temperature, location, localtime, precip}) => {
+        forecast(longitude, latitude, (error, {temperature, location, localtime, precip, windSpeed}) => {
             if (error) {
                 return res.send({ error })
             }
@@ -58,7 +58,7 @@ app.get('/weather', (req, res) => {
             const date = localtime[0];
             const time = localtime[1];
             res.send({
-                forecast: 'It is '+temperature+' degrees out in '+location+' on '+date+' at '+time+'.There is '+precip+'% chance of rainfall'
+                forecast: 'It is '+temperature+' degrees out in '+location+' on '+date+' at '+time+'.There is '+precip+'% chance of rainfall and the wind speed is '+windSpeed+' km/hr'
             })
         })
     })

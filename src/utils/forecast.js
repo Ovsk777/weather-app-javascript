@@ -16,11 +16,13 @@ const forecast = (longitude, latitude, callback) => {
             const localtime = body.location.localtime;
             const temperature = body.current.temperature;
             const precip = body.current.precip;
+            const windSpeed = body.current.wind_speed;
             callback(undefined, {
                 location,
                 localtime,
                 temperature,
-                precip
+                precip,
+                windSpeed
             })
         }
     })
