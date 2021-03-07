@@ -70,7 +70,7 @@ app.get('/help/*', (req, res) => {
     res.render('error', {
         title: '404',
         name: 'Abhishek',
-        errorMsg: 'Help article not found!!'
+        errorMsg: 'Help article unavailable!!'
     })
 })
 
